@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taskify - Gamified</title>
+<link rel="stylesheet" href="Taskify.css">
+</head>
+<body>
+
+<header>
+    <h1>Taskify - Gamified</h1>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="streak.html">Streak</a>
+</nav>
+
+<div class="container">
+    <div>
+        <input type="text" id="taskInput" placeholder="Enter task">
+        <input type="date" id="deadlineInput">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <ul id="taskList">
+        
+    </ul>
+</div>
+
+<div class="container">
+    <h2>Settings</h2>
+    <div>
+        <label for="themeToggle">Dark Mode:</label>
+        <input type="checkbox" id="themeToggle" onchange="toggleDarkMode()">
+    </div>
+</div>
+
+<div class="container">
+    <button onclick="clearLocalStorage()">Clear Local Storage</button>
+</div>
+
+<div class="streak-counter">
+    <h2>Streak Counter</h2>
+    <p id="streak">0</p>
+</div>
+
+<div id="scoreboard">
+    <h2>Scoreboard</h2>
+    <ul id="scores">
+    </ul>
+</div>
+
+<script src="Taskify.js">
+</script>
+
+</body>
+</html>

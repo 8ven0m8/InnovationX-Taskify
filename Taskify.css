@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+header {
+    background-color: #d51414;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+nav a:hover {
+    background-color: #ddd;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+input[type="text"],
+input[type="date"],
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #555;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    position: relative;
+}
+.remove-task,
+.tick-task {
+    position: absolute;
+    top: 5px;
+    cursor: pointer;
+}
+.remove-task {
+    right: 5px;
+    color: red;
+}
+.remove-task:hover {
+    color: darkred;
+}
+.tick-task {
+    right: 25px;
+    color: green;
+}
+.tick-task:hover {
+    color: darkgreen;
+}
+.streak-counter {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+}
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #1a0808;
+}
+.container.dark-mode {
+    background-color: #444;
+}
+header.dark-mode {
+    background-color: #222;
+}
+nav a.dark-mode {
+    background-color: #555;
+    color: #fff;
+}
+input[type="text"].dark-mode,
+input[type="date"].dark-mode,
+button.dark-mode {
+    background-color: #555;
+    border-color: #555;
+    color: #fff;
+}
+li.dark-mode {
+    background-color: #666;
+    color: #fff;
+}
