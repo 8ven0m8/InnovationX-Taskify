@@ -70,11 +70,22 @@ li {
     padding: 10px;
     background-color: #f2f2f2;
     border-radius: 5px;
+    position: relative;
+}
+.remove-task {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: red;
+}
+.remove-task:hover {
+    color: darkred;
 }
 /* Dark mode styles */
 body.dark-mode {
     background-color: #333;
-    color: #fff;
+    color: black;
 }
 .container.dark-mode {
     background-color: #444;
@@ -96,20 +107,4 @@ button.dark-mode {
 li.dark-mode {
     background-color: #666;
     color: #fff;
-}
- ul li span{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-}
-
- ul li span:hover{
-    background: #edeef0;
 }

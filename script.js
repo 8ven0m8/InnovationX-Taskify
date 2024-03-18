@@ -1,7 +1,9 @@
+// Retrieve tasks from local storage on page load
 window.onload = function() {
     var savedTasks = localStorage.getItem('tasks');
+    var taskList = document.getElementById('taskList');
     if (savedTasks) {
-        document.getElementById('taskList').innerHTML = savedTasks;
+        taskList.innerHTML = savedTasks;
     }
 }
 
@@ -33,20 +35,28 @@ function addTask() {
         warningBarColor = "green";
     }
     li.style.borderLeft = "10px solid " + warningBarColor;
+
+    // Add remove button
+    var removeBtn = document.createElement("span");
+    removeBtn.innerHTML = " &#10060;";
+    removeBtn.className = "remove-task";
+    removeBtn.onclick = function() {
+        taskList.removeChild(li);
+        updateLocalStorage();
+    };
+    li.appendChild(removeBtn);
     
     taskList.appendChild(li);
-    //aa
-    let span = document.createElement("span");
-        span.innerHTML = "\u00d7"
-        li.appendChild(span);
-        //aa
 
-
-    // Save tasks to local storage
-    localStorage.setItem('tasks', taskList.innerHTML);
+    updateLocalStorage();
 
     taskInput.value = "";
     deadlineInput.value = "";
+}
+
+function updateLocalStorage() {
+    var taskList = document.getElementById("taskList");
+    localStorage.setItem('tasks', taskList.innerHTML);
 }
 
 function toggleDarkMode() {
@@ -73,3 +83,7 @@ function toggleDarkMode() {
     }
 }
 
+function clearLocalStorage() {
+    localStorage.clear();
+    document.getElementById('taskList').innerHTML = '';
+}

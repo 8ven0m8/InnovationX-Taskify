@@ -13,9 +13,7 @@
 </header>
 
 <nav>
-    <a href="home.html">Home</a>
-    <a href="settings.html">Settings</a>
-    <a href="share.html">Share</a>
+    <a href="home.html">Tasks</a>
     <a href="Streak.html">Streak</a>
 </nav>
 
@@ -31,6 +29,17 @@
     </ul>
 </div>
 
+<div class="container">
+    <h2>Settings</h2>
+    <div>
+        <label for="themeToggle">Dark Mode:</label>
+        <input type="checkbox" id="themeToggle" onchange="toggleDarkMode()">
+    </div>
+</div>
+
+<div class="container">
+    <button onclick="clearLocalStorage()">Clear Local Storage</button>
+</div>
 
 <script src="script.js">
 
