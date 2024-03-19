@@ -2,109 +2,176 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 header {
-    background-color: #d51414;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-nav {
-    text-align: center;
-    margin-top: 20px;
-}
-nav a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 20px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    margin: 0 5px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-nav a:hover {
-    background-color: #ddd;
-}
-.container {
-    max-width: 800px;
-    margin: 20px auto;
+    background-color: #673AB7;
+    color: #fff;
     padding: 20px;
-    background-color: white;
+    text-align: center;
+    width: 100%;
+}
+
+nav {
+    background-color: #512DA8;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-input[type="text"],
-input[type="date"],
-button {
-    display: block;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
+    max-width: 600px;
+    text-align: center; /* Center align elements */
 }
+
+.settings-container h2 {
+    color: #512DA8;
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Convert text to uppercase */
+}
+
 button {
-    background-color: #333;
-    color: white;
+    background-color: #673AB7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s; /* Add transition effect */
 }
+
 button:hover {
-    background-color: #555;
+    background-color: #4527A0; /* Darken color on hover */
 }
-ul {
-    list-style-type: none;
+
+.clear-btn,
+.dark-mode-btn {
+    width: auto; /* Set width to auto */
+    margin-top: 10px; /* Add top margin */
+}
+
+/* Dark mode styles */
+
+.dark-mode {
+    background-color: #212121;
+    color: #fff;
+}
+
+.dark-mode nav a {
+    color: #fff;
+}
+
+.dark-mode .container {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode button {
+    background-color: #512DA8;
+}
+
+/* Hover effects */
+
+button:hover,
+.dark-mode button:hover {
+    background-color: #4527A0; /* Darken color on hover */
+}
+.task-input-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+.task-input-container input {
+    flex: 1; /* Take remaining space */
+    margin-right: 10px; /* Add space between inputs */
+    padding: 10px;
+    border: 2px solid #512DA8; /* Match page theme */
+    border-radius: 5px;
+}
+.task-input-container input[type="date"] {
+    flex: 1; /* Take remaining space */
+    padding: 10px;
+    border: 2px solid #512DA8; /* Match page theme */
+    border-radius: 5px;
+}
+.full-width {
+    width: calc(50% - 10px); /* 50% width with margin between inputs */
+    margin-right: 10px; /* Add margin between inputs */
+}
+.add-task-btn {
+    width: calc(50% - 10px); /* 50% width with margin between inputs */
+}
+.task-container input[type="date"] {
+    width: 100%; /* Date input takes full container width */
+}
+#scores {
+    list-style: none;
     padding: 0;
 }
-li {
-    margin-bottom: 10px;
-    padding: 10px;
+
+#scores li {
     background-color: #f2f2f2;
+    margin-bottom: 5px;
+    padding: 10px;
     border-radius: 5px;
-    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive; /* Use a pixelated font for a retro game feel */
 }
-.remove-task {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-    color: red;
+
+#scores li:nth-child(even) {
+    background-color: #e6e6e6;
 }
-.remove-task:hover {
-    color: darkred;
+
+#scores li span:first-child {
+    font-size: 20px;
+    margin-right: 10px;
 }
-/* Dark mode styles */
-body.dark-mode {
+
+#scores li span:last-child {
+    font-size: 18px;
+    color: #4CAF50;
+}
+
+/* Inverted colors for dark mode */
+.dark-mode #scores li {
     background-color: #333;
-    color: black;
 }
-.container.dark-mode {
-    background-color: #444;
-}
-header.dark-mode {
+
+.dark-mode #scores li:nth-child(even) {
     background-color: #222;
 }
-nav a.dark-mode {
-    background-color: #555;
-    color: #fff;
+
+.dark-mode #scores li span:first-child {
+    color: #4CAF50; /* Change player name color */
 }
-input[type="text"].dark-mode,
-input[type="date"].dark-mode,
-button.dark-mode {
-    background-color: #555;
-    border-color: #555;
-    color: #fff;
+
+.dark-mode #scores li span:last-child {
+    color: #fff; /* Change score color */
 }
-li.dark-mode {
-    background-color: #666;
-    color: #fff;
-}
+
+
+
+
+
+
+
+
+
