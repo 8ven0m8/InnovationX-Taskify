@@ -168,7 +168,7 @@ function login(event) {
     const password = document.getElementById("password").value;
 
     // Dummy login logic (replace with your actual authentication logic)
-    if (username === "Pranjal" && password === "Moureabanx@1") {
+    if (username === "Pranjal" && password === "admin") {
         window.location.href = "index.html"; // Redirect to index.html
     } else {
         alert("Invalid username or password. Please try again.");
