@@ -80,8 +80,7 @@ function removeTask() {
         scores[player]--;
         updateScoreboard();
         updateStreak(false);
-        const taskList = document.getElementById("taskList");
-        taskList.removeChild(li);
+        li.remove(); // Remove the parent task element
         updateLocalStorage();
     }
 }
@@ -96,7 +95,8 @@ function tickTask() {
         scores[player]++;
         updateScoreboard();
         updateStreak(true);
-        removeTask.bind(this)();
+        li.remove(); // Remove the parent task element
+        updateLocalStorage();
     }
 }
 
@@ -156,19 +156,13 @@ function addRefreshButton() {
     scoreboard.appendChild(refreshButton);
 }
 
-
-
-
-
-
-
 function login(event) {
     event.preventDefault(); // Prevent form submission
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
     // Dummy login logic (replace with your actual authentication logic)
-    if (username === "Pranjal" && password === "admin") {
+    if (username === "Pranjal" && password === "Moureabanx@1") {
         window.location.href = "index.html"; // Redirect to index.html
     } else {
         alert("Invalid username or password. Please try again.");
